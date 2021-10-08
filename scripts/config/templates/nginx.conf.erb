@@ -99,6 +99,7 @@ http {
 
   # need this b/c setting $fallback to =404 will try #{root}=404 instead of returning a 404
   location @404 {
+    add_header Cache-Control "no-store, no-cache" always;
     return 404;
   }
 
